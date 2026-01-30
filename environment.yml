@@ -1,0 +1,17 @@
+name: copperbelt
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - nbconvert
+  - geopandas
+  - rasterio
+  - shapely
+  - pyproj
+  - fiona
+  - rasterstats
+  - pip
