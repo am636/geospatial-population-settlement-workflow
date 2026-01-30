@@ -1,0 +1,101 @@
+{
+  "run_time_utc": "2026-01-30T04:12:16+00:00",
+  "project_root": "C:\\Users\\am636\\copperbelt_worldpop_smod",
+  "folders": {
+    "data_raw": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw",
+    "outputs": "C:\\Users\\am636\\copperbelt_worldpop_smod\\outputs",
+    "figures": "C:\\Users\\am636\\copperbelt_worldpop_smod\\figures",
+    "tables": "C:\\Users\\am636\\copperbelt_worldpop_smod\\tables"
+  },
+  "files": {
+    "adm2": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\ZMB_adm2_gadm41_Copperbelt.shp",
+    "worldpop": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\zmb_ppp_2020_constrained.tif",
+    "smod": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\GHS_SMOD_E2020_GLOBE_R2023A_54009_1000_V1_0_R11_C21.tif"
+  },
+  "layers": {
+    "adm2": {
+      "path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\ZMB_adm2_gadm41_Copperbelt.shp",
+      "crs": "EPSG:4326",
+      "feature_count": 12,
+      "geometry_type": "Polygon",
+      "columns": [
+        "GID_2",
+        "GID_0",
+        "COUNTRY",
+        "GID_1",
+        "NAME_1",
+        "NL_NAME_1",
+        "NAME_2",
+        "VARNAME_2",
+        "NL_NAME_2",
+        "TYPE_2",
+        "ENGTYPE_2",
+        "CC_2",
+        "HASC_2",
+        "geometry"
+      ],
+      "bounds": {
+        "minx": 26.77343793900019,
+        "miny": -13.937988280999946,
+        "maxx": 29.065937939000094,
+        "maxy": -11.560101650999968
+      },
+      "NAME_2_sample": [
+        "Chililabombwe",
+        "Chingola",
+        "Kalulushi",
+        "Kitwe",
+        "Luanshya",
+        "Lufwanyama",
+        "Masaiti",
+        "Mpongwe",
+        "Mufulira",
+        "Ndola"
+      ]
+    },
+    "worldpop": {
+      "path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\zmb_ppp_2020_constrained.tif",
+      "crs": "EPSG:4326",
+      "width": 14047,
+      "height": 11826,
+      "bands": 1,
+      "dtype": [
+        "float32"
+      ],
+      "nodata": -99999.0,
+      "pixel_size": [
+        0.0008333333300348827,
+        0.000833333330035515
+      ],
+      "bounds": {
+        "left": 21.99958326,
+        "bottom": -18.07958306,
+        "right": 33.705416547,
+        "top": -8.224583099
+      },
+      "driver": "GTiff"
+    },
+    "smod": {
+      "path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\GHS_SMOD_E2020_GLOBE_R2023A_54009_1000_V1_0_R11_C21.tif",
+      "crs": "ESRI:54009",
+      "width": 1000,
+      "height": 1000,
+      "bands": 1,
+      "dtype": [
+        "int16"
+      ],
+      "nodata": -200.0,
+      "pixel_size": [
+        1000.0,
+        1000.0
+      ],
+      "bounds": {
+        "left": 1959000.0,
+        "bottom": -2000000.0,
+        "right": 2959000.0,
+        "top": -1000000.0
+      },
+      "driver": "GTiff"
+    }
+  }
+}

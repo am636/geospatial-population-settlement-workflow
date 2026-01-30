@@ -1,0 +1,281 @@
+{
+  "run_time_utc": "2026-01-30T04:17:39+00:00",
+  "boundary_path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\ZMB_adm2_gadm41_Copperbelt.shp",
+  "project_root": "C:\\Users\\am636\\copperbelt_worldpop_smod",
+  "expected_name1": "Copperbelt",
+  "equal_area_crs": "EPSG:6933",
+  "checks": [
+    {
+      "check": "A1 File exists",
+      "status": "PASS",
+      "metrics": {
+        "path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\ZMB_adm2_gadm41_Copperbelt.shp"
+      },
+      "note": ""
+    },
+    {
+      "check": "A2 Readable layer",
+      "status": "PASS",
+      "metrics": {
+        "features": 12
+      },
+      "note": ""
+    },
+    {
+      "check": "A3 Geometry types are polygon-only",
+      "status": "PASS",
+      "metrics": {
+        "geom_types": [
+          "Polygon"
+        ],
+        "unexpected": []
+      },
+      "note": ""
+    },
+    {
+      "check": "A4 Text encoding heuristic",
+      "status": "PASS",
+      "metrics": {
+        "flagged_columns": [],
+        "checked_object_columns": 0
+      },
+      "note": ""
+    },
+    {
+      "check": "B1 CRS exists",
+      "status": "PASS",
+      "metrics": {
+        "crs": "EPSG:4326",
+        "epsg": 4326
+      },
+      "note": ""
+    },
+    {
+      "check": "B2 Geographic CRS note",
+      "status": "WARN",
+      "metrics": {
+        "is_geographic": true
+      },
+      "note": "Area/length are not meaningful unless projected (e.g., EPSG:6933)."
+    },
+    {
+      "check": "C1 Schema overview",
+      "status": "PASS",
+      "metrics": {
+        "columns": [
+          "GID_2",
+          "GID_0",
+          "COUNTRY",
+          "GID_1",
+          "NAME_1",
+          "NL_NAME_1",
+          "NAME_2",
+          "VARNAME_2",
+          "NL_NAME_2",
+          "TYPE_2",
+          "ENGTYPE_2",
+          "CC_2",
+          "HASC_2",
+          "geometry"
+        ],
+        "dtypes": {
+          "GID_2": "str",
+          "GID_0": "str",
+          "COUNTRY": "str",
+          "GID_1": "str",
+          "NAME_1": "str",
+          "NL_NAME_1": "str",
+          "NAME_2": "str",
+          "VARNAME_2": "str",
+          "NL_NAME_2": "str",
+          "TYPE_2": "str",
+          "ENGTYPE_2": "str",
+          "CC_2": "str",
+          "HASC_2": "str"
+        }
+      },
+      "note": ""
+    },
+    {
+      "check": "C2 Key fields present (soft check)",
+      "status": "PASS",
+      "metrics": {
+        "missing": [],
+        "present": [
+          "GID_0",
+          "GID_1",
+          "GID_2",
+          "NAME_1",
+          "NAME_2"
+        ]
+      },
+      "note": ""
+    },
+    {
+      "check": "C3 Null/empty counts for key fields",
+      "status": "PASS",
+      "metrics": {
+        "GID_0": {
+          "null": 0,
+          "empty_string": 0
+        },
+        "GID_1": {
+          "null": 0,
+          "empty_string": 0
+        },
+        "GID_2": {
+          "null": 0,
+          "empty_string": 0
+        },
+        "NAME_1": {
+          "null": 0,
+          "empty_string": 0
+        },
+        "NAME_2": {
+          "null": 0,
+          "empty_string": 0
+        }
+      },
+      "note": ""
+    },
+    {
+      "check": "C4 Uniqueness of GID_2",
+      "status": "FAIL",
+      "metrics": {
+        "duplicates_count": 2,
+        "duplicate_values": [
+          "ZMB.2.3_2"
+        ],
+        "truncated": false
+      },
+      "note": "Duplicate IDs can break joins and distort zonal summaries."
+    },
+    {
+      "check": "C5 Province consistency (unique NAME_1 values)",
+      "status": "WARN",
+      "metrics": {
+        "unique_NAME_1": [
+          "Copperbelt",
+          "North-Western"
+        ]
+      },
+      "note": ""
+    },
+    {
+      "check": "C6 Out-of-scope by expected NAME_1",
+      "status": "FAIL",
+      "metrics": {
+        "expected_NAME_1": "Copperbelt",
+        "mismatch_count": 1
+      },
+      "note": "Out-of-scope features should be removed or reported separately."
+    },
+    {
+      "check": "C7 Hierarchy: NAME_2 maps to a single NAME_1",
+      "status": "PASS",
+      "metrics": {
+        "problematic_NAME_2_count": 0,
+        "examples": {}
+      },
+      "note": ""
+    },
+    {
+      "check": "D1 Missing/empty/invalid geometries",
+      "status": "PASS",
+      "metrics": {
+        "missing_geom": 0,
+        "empty_geom": 0,
+        "invalid_geom": 0
+      },
+      "note": ""
+    },
+    {
+      "check": "D2 Invalid geometry diagnostics",
+      "status": "PASS",
+      "metrics": {
+        "invalid_count": 0
+      },
+      "note": ""
+    },
+    {
+      "check": "E1 Duplicate geometries (exact)",
+      "status": "FAIL",
+      "metrics": {
+        "duplicate_groups": 1,
+        "features_involved": 2
+      },
+      "note": ""
+    },
+    {
+      "check": "F0 Equal-area projection",
+      "status": "PASS",
+      "metrics": {
+        "equal_area_crs": "EPSG:6933"
+      },
+      "note": ""
+    },
+    {
+      "check": "F1 Overlaps between polygons",
+      "status": "FAIL",
+      "metrics": {
+        "overlap_pair_count": 1,
+        "csv": "C:\\Users\\am636\\copperbelt_worldpop_smod\\tables\\task2_overlaps.csv"
+      },
+      "note": ""
+    },
+    {
+      "check": "F2 Enclosed gaps (holes inside union)",
+      "status": "PASS",
+      "metrics": {
+        "hole_count": 0,
+        "hole_area_m2": 0.0,
+        "hole_ratio": 0.0
+      },
+      "note": ""
+    },
+    {
+      "check": "F3 Slivers (very small polygons)",
+      "status": "PASS",
+      "metrics": {
+        "sliver_count": 0,
+        "threshold_m2": 1000000.0,
+        "median_area_m2": 1156362905.182572
+      },
+      "note": ""
+    },
+    {
+      "check": "G1 Geometry complexity",
+      "status": "PASS",
+      "metrics": {
+        "features": 12,
+        "multipart_count": 0,
+        "vertex_count_min": 96,
+        "vertex_count_median": 417.0,
+        "vertex_count_p95": 2211.4499999999985,
+        "vertex_count_max": 3477
+      },
+      "note": ""
+    },
+    {
+      "check": "G2 Zonal statistics readiness notes",
+      "status": "PASS",
+      "metrics": {
+        "notes": [
+          "Overlaps can double-count population in zonal sums.",
+          "Invalid geometries can cause failures or incorrect results in zonal operations.",
+          "Out-of-scope features should be excluded or reported separately."
+        ]
+      },
+      "note": ""
+    },
+    {
+      "check": "H1 Issues layer written",
+      "status": "PASS",
+      "metrics": {
+        "flagged_feature_count": 3,
+        "gpkg": "C:\\Users\\am636\\copperbelt_worldpop_smod\\outputs\\task2_issues_features.gpkg"
+      },
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "run_time_utc": "2026-01-30T04:26:25+00:00",
+  "inputs": {
+    "boundary_path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\data_raw\\ZMB_adm2_gadm41_Copperbelt.shp",
+    "smod_l1_path": "C:\\Users\\am636\\copperbelt_worldpop_smod\\outputs\\task4_smod_L1_from_L2_54009_1km_INT16.tif",
+    "boundary_crs_original": "EPSG:4326",
+    "boundary_crs_used": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "smod_crs": "ESRI:54009",
+    "smod_dtype": "int16",
+    "smod_nodata": -200,
+    "all_touched": false,
+    "name_field": "NAME_2",
+    "method": "rasterio.features.rasterize (per-feature mask, categorical counts)"
+  },
+  "outputs": {
+    "per_adm2_csv": "C:\\Users\\am636\\copperbelt_worldpop_smod\\tables\\task5_smodL1_cellcounts_by_adm2.csv",
+    "dominant_summary_csv": "C:\\Users\\am636\\copperbelt_worldpop_smod\\tables\\task5_smodL1_dominant_summary.csv",
+    "dominant_map_png": "C:\\Users\\am636\\copperbelt_worldpop_smod\\figures\\task5_smodL1_dominant_map.png",
+    "stacked_bar_png": "C:\\Users\\am636\\copperbelt_worldpop_smod\\figures\\task5_smodL1_cellcount_stackedbar.png",
+    "adm2_gpkg": "C:\\Users\\am636\\copperbelt_worldpop_smod\\outputs\\task5_adm2_with_dominant.gpkg"
+  },
+  "results": {
+    "n_adm2": 12,
+    "dominant_counts": [
+      {
+        "dominant_class": "Rural",
+        "n_adm2": 12,
+        "share": 1.0
+      }
+    ],
+    "answer_counts": {
+      "urban_centre_dominant": 0,
+      "rural_dominant": 12
+    }
+  },
+  "rules": {
+    "dominance": "max(cell_counts) over {1,2,3}; ties labelled TIE; zero cells labelled NO_DATA",
+    "nodata_excluded": -200
+  }
+}

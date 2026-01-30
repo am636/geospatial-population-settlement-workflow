@@ -1,0 +1,37 @@
+
+:: =========================
+:: HARD OVERWRITE GitHub main with this local repo
+:: (Windows / Anaconda Prompt / CMD)
+:: =========================
+
+:: 1) Go to your project folder
+cd /d C:\Users\am636\copperbelt_worldpop_smod
+
+:: 2) Confirm you're in the right place
+dir
+
+:: 3) Check current git state
+git status
+
+:: 4) (Optional but recommended) See what remote is set to
+git remote -v
+
+:: 5) Ensure you're on main (or rename to main)
+git branch
+git checkout main 2>nul
+git branch -M main
+
+:: 6) Stage EVERYTHING in this folder (the version you want on GitHub)
+git add -A
+
+:: 7) Commit (this captures your exact local state as a clean snapshot)
+git commit -m "Overwrite repo with local version"
+
+:: If you get "nothing to commit", that's fine — it just means local state is already committed.
+
+:: 8) HARD OVERWRITE the remote main (NO MERGE)
+git push --force origin main
+
+:: 9) Final verification
+git status
+git log --oneline -5

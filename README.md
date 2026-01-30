@@ -28,3 +28,5 @@ copperbelt_worldpop_smod/
 
 ```
 
+## Python requirements
+- geopandas, rasterio, matplotlib, pandas, numpy

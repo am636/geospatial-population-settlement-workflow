@@ -1,0 +1,7 @@
+class,extreme,value,districts
+C1 Rural,min,0.1404239967893147,Kitwe
+C1 Rural,max,0.9771897139006648,Lufwanyama
+C2 Urban cluster,min,0.014907363294728842,Lufwanyama
+C2 Urban cluster,max,0.2937034241478191,"Kalulushi, Kalulushi"
+C3 Urban centre,min,0.0,"Mpongwe, Masaiti"
+C3 Urban centre,max,0.67211111918693,Chingola

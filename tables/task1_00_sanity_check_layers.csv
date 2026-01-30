@@ -1,0 +1,4 @@
+layer,type,crs,feature_count,width,height,pixel_x,pixel_y,bands,dtype,nodata,bounds,path
+adm2,vector,EPSG:4326,12.0,,,,,,,,"26.77343793900019,-13.937988280999946,29.065937939000094,-11.560101650999968",C:\Users\am636\copperbelt_worldpop_smod\data_raw\ZMB_adm2_gadm41_Copperbelt.shp
+worldpop,raster,EPSG:4326,,14047.0,11826.0,0.0008333333300348827,0.000833333330035515,1.0,float32,-99999.0,"21.99958326,-18.07958306,33.705416547,-8.224583099",C:\Users\am636\copperbelt_worldpop_smod\data_raw\zmb_ppp_2020_constrained.tif
+smod,raster,ESRI:54009,,1000.0,1000.0,1000.0,1000.0,1.0,int16,-200.0,"1959000.0,-2000000.0,2959000.0,-1000000.0",C:\Users\am636\copperbelt_worldpop_smod\data_raw\GHS_SMOD_E2020_GLOBE_R2023A_54009_1000_V1_0_R11_C21.tif
