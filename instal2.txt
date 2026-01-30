@@ -1,6 +1,0 @@
-mamba activate C:\Users\am636\AppData\Local\miniconda3
-conda activate copperbelt
-set "OLDPATH=%PATH%"
-set "PATH=%CONDA_PREFIX%\Library\bin;%CONDA_PREFIX%\Scripts;%CONDA_PREFIX%;%SystemRoot%\System32;%SystemRoot%"
-cd /d C:\Users\am636\copperbelt_worldpop_smod
-python -m jupyterlab
