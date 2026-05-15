@@ -1,32 +1,89 @@
-# Copperbelt (Zambia) — Population distribution by settlement type
+# Geospatial population and settlement workflow
 
-This repository contains a small, reproducible workflow for analysing the spatial distribution of population in **Copperbelt Province, Zambia** using:
+This repository contains a reproducible Python workflow for integrating gridded population data, categorical settlement or land-cover rasters, and administrative boundary layers.
 
-- **WorldPop 2020 constrained population** (GeoTIFF, EPSG:4326; people-per-cell)
-- **GHS‑SMOD 2020 settlement model** (GeoTIFF, Mollweide ESRI:54009; categorical L2 codes reclassified to L1)
-- **GADM v4.1 ADM2 boundaries** for Copperbelt (Shapefile, EPSG:4326)
+It is intended as a compact example of applied geospatial data processing: checking input quality, harmonising raster and vector datasets, producing boundary-based summaries, and exporting analysis-ready tables and visual outputs.
 
-## What you can reproduce
+## Workflow summary
 
-- **Task 1**: metadata sanity checks (CRS, resolution, NoData, bounds)
-- **Task 2**: quick **boundary QA** (exact duplicates; out-of-scope feature)
-- **Task 3**: total population per ADM2 (WorldPop zonal sum)
-- **Task 4**: SMOD **L2 → L1** recode (Int16 categorical with explicit NoData)
-- **Task 5**: dominant SMOD L1 class per ADM2 by **area proxy** (cell counts on equal-area grid)
-- **Task 6**: population by SMOD L1 class within each ADM2 (SMOD aligned to the WorldPop grid; closure checks)
+The workflow covers seven common stages in raster-vector spatial analysis:
+
+1. **Input metadata checks**
+   - Inspect coordinate reference systems, raster resolution, bounds, dimensions, data types, and NoData values.
+   - Confirm whether layers can be compared directly or require reprojection, clipping, or grid alignment.
+
+2. **Boundary quality assurance**
+   - Check administrative or reporting boundaries for geometry validity, duplicate records, and out-of-domain features.
+   - Produce simple QA outputs before running spatial summaries.
+
+3. **Population summaries by boundary**
+   - Calculate zonal population totals for each reporting unit.
+   - Export clean tabular outputs for reporting, mapping, or downstream analysis.
+
+4. **Categorical raster reclassification**
+   - Recode detailed settlement, land-cover, or urban-rural classes into broader analytical categories.
+   - Preserve categorical data types and explicit NoData handling.
+
+5. **Raster alignment**
+   - Align categorical and continuous raster layers to a common grid.
+   - Use nearest-neighbour resampling for categorical classes to avoid creating invalid intermediate categories.
+
+6. **Population by class**
+   - Combine population and categorical raster layers to estimate population totals and proportions by class within each boundary.
+   - Run consistency checks to compare class totals against overall population totals.
+
+7. **Outputs and documentation**
+   - Save reproducible tables, figures, GIS-ready outputs, and QA artefacts.
+   - Keep raw inputs, intermediate files, and final outputs organised separately.
+
+## Example input data types
+
+The same structure can be adapted to different study areas and datasets, including:
+
+- gridded population rasters;
+- categorical settlement, land-cover, or urban-rural classification rasters;
+- administrative boundaries or custom reporting zones;
+- optional basemaps or reference layers for visualisation and QA.
+
+Raw geospatial datasets are often large and may have redistribution restrictions, so they should normally be downloaded separately from the original providers rather than stored directly in the repository.
 
 ## Repository layout
 
-```
-copperbelt_worldpop_smod/
-  data_raw/              ]
-  notebooks/               
-  outputs/
-    tables/                
-    figures/             
-    qgis/                 
-
+```text
+.
+├── notebooks/          # Reproducible analysis notebooks
+├── outputs/
+│   ├── tables/         # CSV summaries and QA tables
+│   ├── figures/        # Maps and charts
+│   └── qgis/           # GIS-ready outputs
+├── data_raw/           # Local input data; normally not versioned if large
+└── README.md
 ```
 
 ## Python requirements
-- geopandas, rasterio, matplotlib, pandas, numpy
+
+Core packages:
+
+- `geopandas`
+- `rasterio`
+- `pandas`
+- `numpy`
+- `matplotlib`
+
+A Conda or Mamba environment is recommended for installing geospatial dependencies, especially GDAL-related packages used by `rasterio` and `geopandas`.
+
+## Reproducibility notes
+
+For a new analysis, update the input paths, boundary layer, raster sources, classification legend, and output names to match the chosen study area and datasets.
+
+The workflow is designed to make spatial assumptions explicit: CRS handling, grid alignment, resampling method, NoData treatment, and closure checks are documented as part of the analysis rather than hidden in ad hoc processing steps.
+
+## Skills demonstrated
+
+- Raster-vector integration
+- CRS, grid, and metadata quality assurance
+- Zonal statistics
+- Categorical raster reclassification
+- Population and settlement-class summaries
+- Reproducible Python geospatial workflows
+- Spatial reporting and visualisation
