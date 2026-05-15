@@ -2,7 +2,7 @@
 
 This repository contains a reproducible Python workflow for integrating gridded population data, categorical settlement or land-cover rasters, and administrative boundary layers.
 
-It is intended as a compact example of applied geospatial data processing: checking input quality, harmonising raster and vector datasets, producing boundary-based summaries, and exporting analysis-ready tables and visual outputs.
+The workflow focuses on practical geospatial data processing: checking input quality, harmonising raster and vector datasets, producing boundary-based summaries, and exporting analysis-ready tables and visual outputs.
 
 ## Workflow summary
 
@@ -78,12 +78,12 @@ For a new analysis, update the input paths, boundary layer, raster sources, clas
 
 The workflow is designed to make spatial assumptions explicit: CRS handling, grid alignment, resampling method, NoData treatment, and closure checks are documented as part of the analysis rather than hidden in ad hoc processing steps.
 
-## Skills demonstrated
+## Methods covered
 
 - Raster-vector integration
 - CRS, grid, and metadata quality assurance
 - Zonal statistics
 - Categorical raster reclassification
 - Population and settlement-class summaries
-- Reproducible Python geospatial workflows
+- Reproducible Python geospatial processing
 - Spatial reporting and visualisation
